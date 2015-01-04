@@ -9,13 +9,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
 
 import com.sip.ch01.model.Account;
 import com.sip.ch01.dao.AccountDao;
 
+@Component
 public class CsvAccountDao implements AccountDao {
 
+	@Autowired
 	private Resource csvResource; 
 	
 	public void setCsvResource(Resource csvFile) {

@@ -8,15 +8,18 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.sip.ch01.dao.AccountDao;
 import com.sip.ch01.model.Account;
 
-@Component
+@Service
 public class AccountService {
 
 	@Autowired
+	@Qualifier("csvAccountDao")
 	private AccountDao accountDao;
 
 	public void setAccountDao(AccountDao accountDao) {
